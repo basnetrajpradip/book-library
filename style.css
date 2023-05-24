@@ -8,8 +8,8 @@
 }
 
 :root {
-  --main-bg-color: #9db2bf;
-  --light: #f1f4f7;
+  --main-bg-color: rgb(241, 243, 245);
+  --light: #dadada;
   --med-dark: #526d82;
   --dark: #1c293a;
 }
@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  background-color: var(--main-bg-color);
+  background-color: rgb(241, 243, 245);
   font-size: 16px;
   font-family: body;
   color: var(--dark);
@@ -69,7 +69,7 @@ body {
 }
 
 #library-form .pages-div {
-  gap: 0.5rem;
+  gap: 1.3rem;
 }
 
 #library-form .read-div {
@@ -107,11 +107,48 @@ select {
 
 .submit-button {
   font-size: 1.3rem;
-  color: var(--light);
+  color: #fff;
   height: 2.2rem;
   width: 7rem;
   appearance: none;
   background: var(--dark);
   border-radius: 5px;
   border: 1px solid var(--dark);
+}
+
+table {
+  border-collapse: collapse;
+  letter-spacing: 1px;
+  font-size: 1.8rem;
+}
+
+tr {
+  border-bottom: 2px solid rgb(200, 200, 200);
+}
+
+td {
+  text-align: center;
+  padding: 1.3rem;
+}
+
+.status {
+  font-size: 1.3rem;
+  color: #fff;
+  height: 2.2rem;
+  width: 7rem;
+  appearance: none;
+  background: var(--dark);
+  border-radius: 5px;
+  border: 1px solid var(--dark);
+}
+
+.delete {
+  font-size: 1.3rem;
+  color: #fff;
+  height: 2.2rem;
+  width: 7rem;
+  appearance: none;
+  background: rgb(167, 29, 29);
+  border-radius: 5px;
+  border: 1px solid rgb(167, 29, 29);
 }
