@@ -152,3 +152,9 @@ td {
   border-radius: 5px;
   border: 1px solid rgb(167, 29, 29);
 }
+
+.error::after {
+  content: "*Field can't be empty";
+  color: red;
+  font-size: 1rem;
+}

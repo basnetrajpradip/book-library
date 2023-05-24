@@ -11,6 +11,7 @@ const bookName = document.querySelector("#book-name");
 const pagesCount = document.querySelector("#pages");
 const authorName = document.querySelector("#author");
 const readStatus = document.querySelector("#read");
+const bookRow = document.querySelector(".book-row");
 
 //Storing html elements in array so we can apply eventlistner once and for all
 const inputForms = [bookName, pagesCount, authorName, readStatus];
@@ -38,14 +39,7 @@ inputForms.forEach((input) => {
   });
 });
 
-function addBookTOLibrary(event) {
-  /*  event.preventDefault(); */
-  myLibrary[myLibrary.length] = new Book(book, pages, author, bookStatus);
-  console.log(myLibrary[length - 1]);
-  /*   displayBooks(); */
-}
-
-/* function displayBooks() {
+function displayBooks() {
   const bookElement = document.createElement("tr");
   const bookNameData = document.createElement("td");
   const bookPageData = document.createElement("td");
@@ -57,7 +51,26 @@ function addBookTOLibrary(event) {
   const delButton = document.createElement("button");
   delButton.className = "delete";
 
-  bookElement.textContent = myLibrary[myLibrary.length - 1].Book.name;
-} */
+  delButton.textContent = "Delete";
+  bookNameData.textContent = myLibrary[myLibrary.length - 1].name;
+  bookPageData.textContent = myLibrary[myLibrary.length - 1].pages;
+  bookAuthorData.textContent = myLibrary[myLibrary.length - 1].author;
+  bookReadButton.textContent = myLibrary[myLibrary.length - 1].status;
+
+  bookReadData.appendChild(bookReadButton);
+  delData.appendChild(delButton);
+  bookElement.append(bookNameData, bookPageData, bookAuthorData, bookReadData, delData);
+  bookRow.appendChild(bookElement);
+}
+
+function addBookTOLibrary(event) {
+  event.preventDefault();
+  if (bookName.value.trim() === "" || pagesCount.value.trim() === "" || authorName.value.trim() === "") {
+    console.log("hello");
+  } else {
+    myLibrary[myLibrary.length] = new Book(book, pages, author, bookStatus);
+    displayBooks();
+  }
+}
 
 submit.addEventListener("click", addBookTOLibrary);
