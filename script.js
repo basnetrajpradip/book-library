@@ -12,7 +12,7 @@ const pagesCount = document.querySelector("#pages");
 const authorName = document.querySelector("#author");
 const readStatus = document.querySelector("#read");
 const bookRow = document.querySelector(".book-row");
-
+const form = document.querySelector("#library-form");
 //Storing html elements in array so we can apply eventlistner once and for all
 const inputForms = [bookName, pagesCount, authorName, readStatus];
 
@@ -63,13 +63,23 @@ function displayBooks() {
   bookRow.appendChild(bookElement);
 }
 
+function clearField() {
+  inputForms.forEach((input) => {
+    if (input !== readStatus) {
+      input.value = "";
+    }
+  });
+}
+
 function addBookTOLibrary(event) {
   event.preventDefault();
   if (bookName.value.trim() === "" || pagesCount.value.trim() === "" || authorName.value.trim() === "") {
-    console.log("hello");
+    form.classList.add("error");
   } else {
     myLibrary[myLibrary.length] = new Book(book, pages, author, bookStatus);
     displayBooks();
+    form.classList.remove("error");
+    clearField();
   }
 }
 
