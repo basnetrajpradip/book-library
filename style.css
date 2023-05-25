@@ -129,7 +129,7 @@ tr {
 
 td {
   text-align: center;
-  padding: 1.3rem;
+  padding: 1.5rem;
 }
 
 .status {
@@ -138,9 +138,16 @@ td {
   height: 2.2rem;
   width: 7rem;
   appearance: none;
-  background: var(--dark);
   border-radius: 5px;
-  border: 1px solid var(--dark);
+  /*   border: 1px solid var(--dark); */
+}
+
+.read {
+  background: green;
+}
+
+.not-read {
+  background: rgb(167, 29, 29);
 }
 
 .delete {
@@ -149,9 +156,9 @@ td {
   height: 2.2rem;
   width: 7rem;
   appearance: none;
-  background: rgb(167, 29, 29);
+  background: var(--dark);
   border-radius: 5px;
-  border: 1px solid rgb(167, 29, 29);
+  border: 1px solid var(--dark);
 }
 
 .error::after {

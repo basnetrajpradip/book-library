@@ -13,6 +13,8 @@ const authorName = document.querySelector("#author");
 const readStatus = document.querySelector("#read");
 const bookRow = document.querySelector(".book-row");
 const form = document.querySelector("#library-form");
+const table = document.querySelector(".myTable");
+
 //Storing html elements in array so we can apply eventlistner once and for all
 const inputForms = [bookName, pagesCount, authorName, readStatus];
 
@@ -57,6 +59,11 @@ function displayBooks() {
   bookAuthorData.textContent = myLibrary[myLibrary.length - 1].author;
   bookReadButton.textContent = myLibrary[myLibrary.length - 1].status;
 
+  if (bookReadButton.textContent === "Read") {
+    bookReadButton.style.backgroundColor = "green";
+  } else {
+    bookReadButton.style.backgroundColor = "rgb(167, 29, 29)";
+  }
   bookReadData.appendChild(bookReadButton);
   delData.appendChild(delButton);
   bookElement.append(bookNameData, bookPageData, bookAuthorData, bookReadData, delData);
@@ -80,7 +87,30 @@ function addBookTOLibrary(event) {
     displayBooks();
     form.classList.remove("error");
     clearField();
+    statusButton = document.querySelectorAll(".status");
+    console.log(statusButton);
   }
 }
+
+table.addEventListener("click", (event) => {
+  if (event.target.classList.contains("status")) {
+    const button = event.target;
+    if (button.textContent === "Read") {
+      button.textContent = "Not Read";
+      button.style.backgroundColor = "rgb(167, 29, 29)";
+    } else {
+      button.textContent = "Read";
+      button.style.backgroundColor = "green";
+    }
+  }
+});
+
+table.addEventListener("click", (event) => {
+  if (event.target.classList.contains("delete")) {
+    const button = event.target;
+    const row = button.parentNode.parentNode;
+    bookRow.removeChild(row);
+  }
+});
 
 submit.addEventListener("click", addBookTOLibrary);

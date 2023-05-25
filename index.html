@@ -22,7 +22,7 @@
           </div>
           <div class="pages-div">
             <label for="pages">Pages</label>
-            <input type="number" id="pages" name="pages" required />
+            <input type="number" id="pages" name="pages" min="1" required />
           </div>
           <div class="author-div">
             <label for="author">Author</label>
@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="show-book">
-        <table>
+        <table class="myTable">
           <caption></caption>
           <colgroup></colgroup>
           <thead>
@@ -57,7 +57,7 @@
               <td>450</td>
               <td>George R.R Martin</td>
               <td>
-                <button class="status">Not Read</button>
+                <button class="status not-read">Not Read</button>
               </td>
               <td>
                 <button class="delete">Delete</button>
@@ -68,7 +68,7 @@
               <td>650</td>
               <td>Laxmi Prasad Devkota</td>
               <td>
-                <button class="status">Read</button>
+                <button class="status read">Read</button>
               </td>
               <td>
                 <button class="delete">Delete</button>
@@ -79,7 +79,7 @@
               <td>340</td>
               <td>Jhamak K. Ghimire</td>
               <td>
-                <button class="status">Not Read</button>
+                <button class="status not-read">Not Read</button>
               </td>
               <td>
                 <button class="delete">Delete</button>
