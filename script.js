@@ -18,12 +18,14 @@ const table = document.querySelector(".myTable");
 //Storing html elements in array so we can apply eventlistner once and for all
 const inputForms = [bookName, pagesCount, authorName, readStatus];
 
-//Object Constructor
-function Book(name, pages, author, status) {
-  this.name = name;
-  this.pages = pages;
-  this.author = author;
-  this.status = status;
+/* class */
+class Book {
+  constructor(name, pages, author, status) {
+    this.name = name;
+    this.pages = pages;
+    this.author = author;
+    this.status = status;
+  }
 }
 
 //listening the event for the array we created above
