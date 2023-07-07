@@ -1,6 +1,6 @@
-//Array that holds the Book objects
+//Array that holds the Book objects class
 let myLibrary = [];
-
+const classes = 55;
 //initialization and declaration of variables that holds Book object properties
 let book, pages, author;
 let bookStatus = "Read";
